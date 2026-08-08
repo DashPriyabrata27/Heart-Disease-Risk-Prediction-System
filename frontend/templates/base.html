@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- ================================================== -->
+    <!-- Meta Information -->
+    <!-- ================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Heart Disease Prediction using Machine Learning"
+    >
+
+    <meta
+        name="author"
+        content="Ram"
+    >
+
+
+    <!-- ================================================== -->
+    <!-- Page Title -->
+    <!-- ================================================== -->
+
+    <title>
+
+        {% block title %}
+
+        Heart Disease Prediction
+
+        {% endblock %}
+
+    </title>
+
+
+    <!-- ================================================== -->
+    <!-- Favicon -->
+    <!-- ================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="{{ url_for('static', filename='images/logo.png') }}"
+    >
+
+
+    <!-- ================================================== -->
+    <!-- Global CSS -->
+    <!-- ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/base.css') }}"
+    >
+
+
+    <!-- ================================================== -->
+    <!-- Page-Specific CSS -->
+    <!-- ================================================== -->
+
+    {% block extra_css %}
+
+    {% endblock %}
+
+</head>
+
+
+<body>
+
+    <!-- ================================================== -->
+    <!-- Navigation Bar -->
+    <!-- ================================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <img
+                    src="{{ url_for('static', filename='images/logo.png') }}"
+                    alt="Heart Disease Prediction Logo"
+                >
+
+                <h1>
+                    Heart Disease Prediction
+                </h1>
+
+            </div>
+
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a
+                        href="{{ url_for('home.home') }}"
+                    >
+                        Home
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================================================== -->
+    <!-- Main Content -->
+    <!-- ================================================== -->
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+    <!-- ================================================== -->
+    <!-- Footer -->
+    <!-- ================================================== -->
+
+    <footer>
+
+        <p>
+            © {{ current_year }} Heart Disease Prediction System
+        </p>
+
+        <p>
+            Developed using Flask & Machine Learning
+        </p>
+
+    </footer>
+
+
+    <!-- ================================================== -->
+    <!-- Global JavaScript -->
+    <!-- ================================================== -->
+
+    <script
+        src="{{ url_for('static', filename='js/ui.js') }}"
+    ></script>
+
+
+    <!-- ================================================== -->
+    <!-- Page-Specific JavaScript -->
+    <!-- ================================================== -->
+
+    {% block extra_js %}
+
+    {% endblock %}
+
+</body>
+
+</html>

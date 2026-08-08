@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+<!-- ==========================================================
+     Page Title
+========================================================== -->
+
+{% block title %}
+
+Application Error
+
+{% endblock %}
+
+<!-- ==========================================================
+     Additional CSS
+========================================================== -->
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/error.css') }}"
+>
+
+{% endblock %}
+
+<!-- ==========================================================
+     Main Content
+========================================================== -->
+
+{% block content %}
+
+<section class="error-section">
+
+    <div class="error-container error-app">
+
+        <!-- =========================================== -->
+        <!-- Error Icon -->
+        <!-- =========================================== -->
+
+        <img
+
+            src="{{ url_for('static', filename='icons/error.svg') }}"
+
+            alt="Application Error"
+
+            class="error-icon"
+
+        >
+
+        <!-- =========================================== -->
+        <!-- Error Heading -->
+        <!-- =========================================== -->
+
+        <h1 class="error-code">
+
+            Oops!
+
+        </h1>
+
+        <h2 class="error-title">
+
+            Something Went Wrong
+
+        </h2>
+
+        <!-- =========================================== -->
+        <!-- Error Description -->
+        <!-- =========================================== -->
+
+        <p class="error-description">
+
+            An unexpected application error occurred while
+            processing your Heart Disease Prediction request.
+
+        </p>
+
+        <!-- =========================================== -->
+        <!-- Error Message -->
+        <!-- =========================================== -->
+
+        <p class="error-message">
+
+            The request could not be completed successfully.
+
+            This may be caused by temporary server issues or
+            unexpected application behavior.
+
+            Please try again after a few moments.
+
+            If the issue continues, kindly contact the
+            system administrator.
+
+        </p>
+
+        <!-- =========================================== -->
+        <!-- Debug Information -->
+        <!-- =========================================== -->
+
+        {% if config.DEBUG and error %}
+
+        <div class="error-details">
+
+            <h3>
+
+                <img
+
+                    src="{{ url_for('static', filename='icons/info.svg') }}"
+
+                    alt="Information"
+
+                    class="button-icon"
+
+                >
+
+                Debug Information
+
+            </h3>
+
+            <pre>{{ error }}</pre>
+
+        </div>
+
+        {% endif %}
+
+        <!-- =========================================== -->
+        <!-- Action Buttons -->
+        <!-- =========================================== -->
+
+        <div class="error-actions">
+
+            <a
+
+                href="{{ url_for('home.home') }}"
+
+                class="btn-primary"
+
+                aria-label="Return to Home"
+
+            >
+
+                <img
+
+                    src="{{ url_for('static', filename='icons/dashboard.svg') }}"
+
+                    alt="Dashboard"
+
+                    class="button-icon"
+
+                >
+
+                Return to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

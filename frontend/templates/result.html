@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+Prediction Result
+
+{% endblock %}
+
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/result.css') }}"
+>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="result-card">
+
+
+    <!-- =========================================== -->
+    <!-- Result Header -->
+    <!-- =========================================== -->
+
+    <img
+        src="{{ url_for('static', filename='icons/prediction.svg') }}"
+        alt="Prediction"
+        class="result-icon"
+    >
+
+
+    <h2>
+        Heart Disease Prediction Result
+    </h2>
+
+
+    <!-- =========================================== -->
+    <!-- Prediction Result -->
+    <!-- =========================================== -->
+
+    {% if prediction.prediction == 1 %}
+
+
+        <div class="risk-card high-risk">
+
+
+            <img
+                src="{{ url_for('static', filename='icons/warning.svg') }}"
+                alt="Warning"
+            >
+
+
+            <h3>
+                High Risk
+            </h3>
+
+
+            <p>
+                The patient is predicted to have a
+                higher likelihood of heart disease.
+            </p>
+
+
+        </div>
+
+
+    {% else %}
+
+
+        <div class="risk-card low-risk">
+
+
+            <img
+                src="{{ url_for('static', filename='icons/success.svg') }}"
+                alt="Success"
+            >
+
+
+            <h3>
+                Low Risk
+            </h3>
+
+
+            <p>
+                The patient is predicted to have a
+                lower likelihood of heart disease.
+            </p>
+
+
+        </div>
+
+
+    {% endif %}
+
+
+    <!-- =========================================== -->
+    <!-- Prediction Confidence -->
+    <!-- =========================================== -->
+
+    {% if prediction.probability is defined %}
+
+
+        {% if prediction.prediction == 1 %}
+
+            {% set confidence =
+                prediction.probability["Heart Disease"]
+            %}
+
+            {% set confidence_label =
+                "Heart Disease"
+            %}
+
+        {% else %}
+
+            {% set confidence =
+                prediction.probability["No Heart Disease"]
+            %}
+
+            {% set confidence_label =
+                "No Heart Disease"
+            %}
+
+        {% endif %}
+
+
+        <div class="result-info">
+
+
+            <h4>
+                Prediction Confidence
+            </h4>
+
+
+            <div class="confidence-value">
+
+                {{ confidence|round(2) }}%
+
+            </div>
+
+
+            <p>
+
+                {{ confidence_label }}
+
+            </p>
+
+
+            <div class="progress">
+
+
+                <div
+                    class="progress-bar"
+                    style="--progress: {{ confidence|round(2) }}%;"
+                >
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    {% endif %}
+
+
+    <!-- =========================================== -->
+    <!-- Probability Breakdown -->
+    <!-- =========================================== -->
+
+    {% if prediction.probability is defined %}
+
+
+        <div class="result-info">
+
+
+            <h4>
+                Prediction Probability
+            </h4>
+
+
+            <p>
+
+                No Heart Disease:
+
+                <strong>
+
+                    {{ prediction.probability["No Heart Disease"]|round(2) }}%
+
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                Heart Disease:
+
+                <strong>
+
+                    {{ prediction.probability["Heart Disease"]|round(2) }}%
+
+                </strong>
+
+            </p>
+
+
+        </div>
+
+
+    {% endif %}
+
+
+    <!-- =========================================== -->
+    <!-- Recommendation -->
+    <!-- =========================================== -->
+
+    <div class="recommendation">
+
+
+        <h4>
+            Recommendation
+        </h4>
+
+
+        {% if prediction.prediction == 1 %}
+
+
+            <p>
+
+                Please consult a qualified healthcare
+                professional for further medical
+                evaluation and appropriate diagnostic
+                testing.
+
+            </p>
+
+
+        {% else %}
+
+
+            <p>
+
+                Continue maintaining a healthy lifestyle,
+                including regular exercise, a balanced
+                diet, and periodic health check-ups.
+
+            </p>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+    <!-- =========================================== -->
+    <!-- Actions -->
+    <!-- =========================================== -->
+
+    <div class="result-actions">
+
+
+        <a
+            href="{{ url_for('home.home') }}"
+            class="btn-primary"
+        >
+
+            Predict Again
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

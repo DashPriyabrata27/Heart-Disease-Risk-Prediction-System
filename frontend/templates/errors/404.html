@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+<!-- ==========================================================
+     Page Title
+========================================================== -->
+
+{% block title %}
+
+404 - Page Not Found
+
+{% endblock %}
+
+<!-- ==========================================================
+     Additional CSS
+========================================================== -->
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/error.css') }}"
+>
+
+{% endblock %}
+
+<!-- ==========================================================
+     Main Content
+========================================================== -->
+
+{% block content %}
+
+<section class="error-section">
+
+    <div class="error-container error-404">
+
+        <!-- =========================================== -->
+        <!-- Error Icon -->
+        <!-- =========================================== -->
+
+        <img
+
+            src="{{ url_for('static', filename='icons/warning.svg') }}"
+
+            alt="404 Warning"
+
+            class="error-icon"
+
+        >
+
+        <!-- =========================================== -->
+        <!-- Error Code -->
+        <!-- =========================================== -->
+
+        <h1 class="error-code">
+
+            404
+
+        </h1>
+
+        <!-- =========================================== -->
+        <!-- Error Title -->
+        <!-- =========================================== -->
+
+        <h2 class="error-title">
+
+            Page Not Found
+
+        </h2>
+
+        <!-- =========================================== -->
+        <!-- Description -->
+        <!-- =========================================== -->
+
+        <p class="error-description">
+
+            Sorry! The page you are looking for could not be found.
+
+            It may have been moved, deleted, or the URL entered is incorrect.
+
+        </p>
+
+        <p class="error-message">
+
+            Please return to the Home page and continue using the
+            Heart Disease Prediction System.
+
+            If the problem persists, please contact the system administrator.
+
+        </p>
+
+        <!-- =========================================== -->
+        <!-- Action Button -->
+        <!-- =========================================== -->
+
+        <div class="error-actions">
+
+            <a
+
+                href="{{ url_for('home.home') }}"
+
+                class="btn-primary"
+
+            >
+
+                <img
+
+                    src="{{ url_for('static', filename='icons/dashboard.svg') }}"
+
+                    alt="Dashboard"
+
+                    class="button-icon"
+
+                >
+
+                Return to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

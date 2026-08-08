@@ -1,0 +1,533 @@
+/* ==========================================================
+   result.css
+
+   Project:
+   Heart Disease Prediction
+
+   Description:
+   Styles specific to the Prediction Result page.
+========================================================== */
+
+
+/* ==========================================================
+   Result Card
+========================================================== */
+
+.result-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    max-width: 900px;
+
+    margin: 80px auto;
+
+    padding: 50px;
+
+    background: var(--surface-color);
+
+    border-radius: 20px;
+
+    box-shadow: var(--box-shadow);
+
+    text-align: center;
+
+    animation: fadeUp 0.7s ease;
+
+}
+
+
+/* ==========================================================
+   Top Border
+========================================================== */
+
+.result-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--success-color)
+    );
+
+}
+
+
+/* ==========================================================
+   Result Icon
+========================================================== */
+
+.result-icon {
+
+    width: 95px;
+
+    height: 95px;
+
+    margin: 0 auto 25px;
+
+}
+
+
+/* ==========================================================
+   Result Heading
+========================================================== */
+
+.result-card h2 {
+
+    margin-bottom: 35px;
+
+    font-size: 2rem;
+
+    color: var(--primary-color);
+
+}
+
+
+/* ==========================================================
+   Risk Card
+========================================================== */
+
+.risk-card {
+
+    padding: 35px;
+
+    margin-bottom: 35px;
+
+    border-radius: 18px;
+
+    transition: var(--transition);
+
+}
+
+
+.risk-card:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   Risk Icon
+========================================================== */
+
+.risk-card img {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+}
+
+
+/* ==========================================================
+   Risk Heading
+========================================================== */
+
+.risk-card h3 {
+
+    margin-bottom: 15px;
+
+    font-size: 2rem;
+
+}
+
+
+/* ==========================================================
+   Risk Description
+========================================================== */
+
+.risk-card p {
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================================
+   High Risk
+========================================================== */
+
+.high-risk {
+
+    background: #FEF2F2;
+
+    border: 2px solid var(--danger-color);
+
+}
+
+
+.high-risk h3 {
+
+    color: var(--danger-color);
+
+}
+
+
+/* ==========================================================
+   Low Risk
+========================================================== */
+
+.low-risk {
+
+    background: #F0FDF4;
+
+    border: 2px solid var(--success-color);
+
+}
+
+
+.low-risk h3 {
+
+    color: var(--success-color);
+
+}
+
+
+/* ==========================================================
+   Prediction Confidence
+========================================================== */
+
+.result-info {
+
+    padding: 30px;
+
+    margin-bottom: 35px;
+
+    background: #EFF6FF;
+
+    border: 1px solid #BFDBFE;
+
+    border-radius: 16px;
+
+}
+
+
+.result-info h4 {
+
+    margin-bottom: 18px;
+
+    color: var(--primary-color);
+
+    font-size: 1.2rem;
+
+}
+
+
+.confidence-value {
+
+    margin-bottom: 10px;
+
+    font-size: 2.5rem;
+
+    font-weight: 700;
+
+    color: var(--primary-dark);
+
+}
+
+
+.result-info > p {
+
+    margin-bottom: 20px;
+
+    color: var(--text-secondary-color);
+
+}
+
+
+/* ==========================================================
+   Progress Bar
+========================================================== */
+
+.progress {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: #DBEAFE;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-bar {
+
+    width: var(--progress);
+
+    height: 100%;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--primary-dark)
+    );
+
+    transition: width 0.8s ease;
+
+}
+
+
+/* ==========================================================
+   Recommendation
+========================================================== */
+
+.recommendation {
+
+    padding: 30px;
+
+    margin-bottom: 35px;
+
+    background: #F8FAFC;
+
+    border: 1px solid var(--border-color);
+
+    border-left: 6px solid var(--primary-color);
+
+    border-radius: 16px;
+
+    text-align: left;
+
+}
+
+
+.recommendation h4 {
+
+    margin-bottom: 15px;
+
+    color: var(--primary-color);
+
+    font-size: 1.2rem;
+
+}
+
+
+.recommendation p {
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================================
+   Result Actions
+========================================================== */
+
+.result-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+}
+
+
+/* ==========================================================
+   Result Card Animation
+========================================================== */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Tablet
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .result-card {
+
+        margin: 70px 20px;
+
+        padding: 40px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .result-card {
+
+        margin: 60px 20px;
+
+        padding: 30px;
+
+    }
+
+
+    .result-card h2 {
+
+        font-size: 1.7rem;
+
+    }
+
+
+    .risk-card {
+
+        padding: 30px;
+
+    }
+
+
+    .risk-card h3 {
+
+        font-size: 1.6rem;
+
+    }
+
+
+    .confidence-value {
+
+        font-size: 2rem;
+
+    }
+
+
+    .recommendation {
+
+        text-align: center;
+
+    }
+
+
+    .result-actions {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Small Mobile
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .result-card {
+
+        margin: 40px 15px;
+
+        padding: 20px;
+
+    }
+
+
+    .result-icon {
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+
+    .risk-card {
+
+        padding: 25px;
+
+    }
+
+
+    .risk-card img {
+
+        width: 55px;
+
+        height: 55px;
+
+    }
+
+
+    .risk-card h3 {
+
+        font-size: 1.4rem;
+
+    }
+
+
+    .confidence-value {
+
+        font-size: 1.7rem;
+
+    }
+
+
+    .recommendation {
+
+        padding: 20px;
+
+    }
+
+
+    .recommendation h4 {
+
+        font-size: 1.1rem;
+
+    }
+
+
+    .result-actions {
+
+        gap: 15px;
+
+    }
+
+
+    .result-actions .btn-primary {
+
+        width: 100%;
+
+    }
+
+}

@@ -1,0 +1,766 @@
+/* ==========================================================
+   home.css
+
+   Project:
+   --------
+   Heart Disease Prediction
+
+   Description:
+   ------------
+   Styles specific to the Home page.
+========================================================== */
+
+
+/* ==========================================================
+   Hero Section
+========================================================== */
+
+.hero{
+
+    position:relative;
+
+    padding:90px 20px;
+
+    background-image:url("../images/background.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================================
+   Hero Overlay
+========================================================== */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(15,23,42,.72);
+
+}
+
+
+/* ==========================================================
+   Hero Content
+========================================================== */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:1;
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+
+/* ==========================================================
+   Hero Text
+========================================================== */
+
+.hero-text{
+
+    color:#FFFFFF;
+
+}
+
+.hero-text h2{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    color:#FFFFFF;
+
+}
+
+.hero-text p{
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+
+    color:#E2E8F0;
+
+    max-width:580px;
+
+}
+
+
+/* ==========================================================
+   Hero Image
+========================================================== */
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    transition:var(--transition);
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/* ==========================================================
+   Responsive Hero
+========================================================== */
+
+@media(max-width:992px){
+
+    .hero{
+
+        padding:70px 20px;
+
+    }
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:40px;
+
+    }
+
+    .hero-image{
+
+        order:-1;
+
+    }
+
+    .hero-text{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .hero-text h2{
+
+        font-size:2.5rem;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .hero{
+
+        padding:50px 20px;
+
+    }
+
+    .hero-text h2{
+
+        font-size:2rem;
+
+    }
+
+    .hero-text p{
+
+        font-size:1rem;
+
+    }
+
+    .hero-image img{
+
+        max-width:360px;
+
+    }
+
+}
+
+
+@media(max-width:576px){
+
+    .hero{
+
+        padding:40px 15px;
+
+    }
+
+    .hero-text h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .hero-text p{
+
+        font-size:.95rem;
+
+    }
+
+    .hero-image img{
+
+        max-width:300px;
+
+    }
+
+}
+/* ==========================================================
+   Prediction Form Section
+========================================================== */
+
+.prediction-form{
+
+    padding:80px 20px;
+
+    background:var(--background-color);
+
+}
+
+
+/* ==========================================================
+   Form Card
+========================================================== */
+
+.form-card{
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding:50px;
+
+    background:var(--surface-color);
+
+    border-radius:20px;
+
+    box-shadow:var(--box-shadow);
+
+}
+
+
+/* ==========================================================
+   Form Header
+========================================================== */
+
+.form-header{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.form-header h2{
+
+    color:var(--primary-color);
+
+    font-size:2rem;
+
+    margin:15px 0;
+
+}
+
+.form-header p{
+
+    max-width:720px;
+
+    margin:0 auto;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   Section Icons
+========================================================== */
+
+.section-icon{
+
+    width:30px;
+
+    height:30px;
+
+    margin-right:10px;
+
+    vertical-align:middle;
+
+}
+
+
+/* ==========================================================
+   Form Sections
+========================================================== */
+
+.form-section{
+
+    padding:30px;
+
+    margin-bottom:40px;
+
+    background:var(--surface-color);
+
+    border:1px solid var(--border-color);
+
+    border-radius:16px;
+
+    transition:var(--transition);
+
+}
+
+.form-section:hover{
+
+    box-shadow:0 12px 30px rgba(15,23,42,.08);
+
+}
+
+.form-section h3{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    color:var(--primary-color);
+
+    font-size:1.3rem;
+
+}
+
+
+/* ==========================================================
+   Form Grid
+========================================================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+/* ==========================================================
+   Form Group
+========================================================== */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:var(--text-primary);
+
+}
+
+
+/* ==========================================================
+   Input Fields
+========================================================== */
+
+.form-group input,
+
+.form-group select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    font-size:1rem;
+
+    border:1px solid var(--border-color);
+
+    border-radius:12px;
+
+    background:#FFFFFF;
+
+    transition:var(--transition);
+
+}
+
+
+/* ==========================================================
+   Placeholder
+========================================================== */
+
+.form-group input::placeholder{
+
+    color:#94A3B8;
+
+}
+
+
+/* ==========================================================
+   Hover State
+========================================================== */
+
+.form-group input:hover,
+
+.form-group select:hover{
+
+    border-color:var(--primary-color);
+
+}
+
+
+/* ==========================================================
+   Focus State
+========================================================== */
+
+.form-group input:focus,
+
+.form-group select:focus{
+
+    outline:none;
+
+    border-color:var(--primary-color);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+
+/* ==========================================================
+   Validation
+========================================================== */
+
+.form-group input.invalid,
+
+.form-group select.invalid{
+
+    border-color:var(--danger-color);
+
+    box-shadow:0 0 0 3px rgba(220,38,38,.12);
+
+}
+
+.validation-error{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:var(--danger-color);
+
+    font-size:.85rem;
+
+    font-weight:500;
+
+}
+/* ==========================================================
+   Submit Section
+========================================================== */
+
+.submit-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:50px;
+
+}
+
+
+/* ==========================================================
+   Prediction Button
+========================================================== */
+
+.submit-section .btn-primary{
+
+    min-width:260px;
+
+}
+
+
+/* ==========================================================
+   Button Icon
+========================================================== */
+
+.button-icon{
+
+    width:22px;
+
+    height:22px;
+
+    flex-shrink:0;
+
+}
+
+
+/* ==========================================================
+   Loading State
+========================================================== */
+
+.submit-section .btn-primary.loading{
+
+    opacity:.85;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   Form Animation
+========================================================== */
+
+.form-card{
+
+    animation:fadeUp .7s ease;
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Tablet
+========================================================== */
+
+@media(max-width:992px){
+
+    .prediction-form{
+
+        padding:70px 20px;
+
+    }
+
+    .form-card{
+
+        padding:40px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Mobile
+========================================================== */
+
+@media(max-width:768px){
+
+    .prediction-form{
+
+        padding:60px 20px;
+
+    }
+
+    .form-card{
+
+        padding:30px;
+
+    }
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .form-header h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .form-header p{
+
+        font-size:.95rem;
+
+    }
+
+    .form-section{
+
+        padding:25px;
+
+    }
+
+    .form-section h3{
+
+        font-size:1.2rem;
+
+    }
+
+    .section-icon{
+
+        width:26px;
+
+        height:26px;
+
+    }
+
+    .submit-section .btn-primary{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Small Mobile
+========================================================== */
+
+@media(max-width:576px){
+
+    .prediction-form{
+
+        padding:40px 15px;
+
+    }
+
+    .form-card{
+
+        padding:20px;
+
+    }
+
+    .form-header{
+
+        margin-bottom:35px;
+
+    }
+
+    .form-header h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .form-header p{
+
+        font-size:.9rem;
+
+    }
+
+    .form-section{
+
+        padding:20px;
+
+    }
+
+    .form-section h3{
+
+        font-size:1.1rem;
+
+    }
+
+    .section-icon{
+
+        width:22px;
+
+        height:22px;
+
+        margin-right:8px;
+
+    }
+
+    .submit-section{
+
+        margin-top:35px;
+
+    }
+
+    .submit-section .btn-primary{
+
+        width:100%;
+
+        min-width:unset;
+
+    }
+
+    .button-icon{
+
+        width:20px;
+
+        height:20px;
+
+    }
+
+}

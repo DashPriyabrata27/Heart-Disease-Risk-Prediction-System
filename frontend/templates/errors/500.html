@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+<!-- ==========================================================
+     Page Title
+========================================================== -->
+
+{% block title %}
+
+500 - Internal Server Error
+
+{% endblock %}
+
+<!-- ==========================================================
+     Additional CSS
+========================================================== -->
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/error.css') }}"
+>
+
+{% endblock %}
+
+<!-- ==========================================================
+     Main Content
+========================================================== -->
+
+{% block content %}
+
+<section class="error-section">
+
+    <div class="error-container error-500">
+
+        <!-- =========================================== -->
+        <!-- Error Icon -->
+        <!-- =========================================== -->
+
+        <img
+
+            src="{{ url_for('static', filename='icons/error.svg') }}"
+
+            alt="Internal Server Error"
+
+            class="error-icon"
+
+        >
+
+        <!-- =========================================== -->
+        <!-- Error Code -->
+        <!-- =========================================== -->
+
+        <h1 class="error-code">
+
+            500
+
+        </h1>
+
+        <!-- =========================================== -->
+        <!-- Error Title -->
+        <!-- =========================================== -->
+
+        <h2 class="error-title">
+
+            Internal Server Error
+
+        </h2>
+
+        <!-- =========================================== -->
+        <!-- Error Description -->
+        <!-- =========================================== -->
+
+        <p class="error-description">
+
+            An unexpected error occurred while processing
+            your Heart Disease Prediction request.
+
+        </p>
+
+        <!-- =========================================== -->
+        <!-- Error Message -->
+        <!-- =========================================== -->
+
+        <p class="error-message">
+
+            Our server encountered an unexpected condition
+            that prevented it from completing your request.
+
+            Your submitted information has not been modified.
+
+            Please wait a few moments and try again.
+
+            If the problem continues, kindly contact the
+            system administrator.
+
+        </p>
+
+        <!-- =========================================== -->
+        <!-- Action Buttons -->
+        <!-- =========================================== -->
+
+        <div class="error-actions">
+
+            <a
+
+                href="{{ url_for('home.home') }}"
+
+                class="btn-primary"
+
+                aria-label="Return to Home"
+
+            >
+
+                <img
+
+                    src="{{ url_for('static', filename='icons/dashboard.svg') }}"
+
+                    alt="Dashboard"
+
+                    class="button-icon"
+
+                >
+
+                Return to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
